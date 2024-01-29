@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
-
+@import "./normalize.css";
 *,
 ::before,
 ::after {
@@ -14,4 +14,11 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-size: 1.6rem;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
 }

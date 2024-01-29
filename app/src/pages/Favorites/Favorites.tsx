@@ -1,5 +1,11 @@
+import PageWrapper from "../../components/PageWrapper/PageWrapper";
+
 const Favorites = () => {
-  return <h1>Favorites</h1>;
+  return (
+    <PageWrapper>
+      <h1>Favorites</h1>
+    </PageWrapper>
+  );
 };
 
 export default Favorites;
