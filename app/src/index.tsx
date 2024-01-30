@@ -4,12 +4,15 @@ import { BrowserRouter } from "react-router-dom";
 
 import "./index.css";
 import App from "./App";
+import { CatProvider } from "./store/CatsContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <BrowserRouter>
-    <App />
+    <CatProvider>
+      <App />
+    </CatProvider>
   </BrowserRouter>
 );
