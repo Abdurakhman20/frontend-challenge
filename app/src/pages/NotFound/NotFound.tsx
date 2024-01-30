@@ -10,9 +10,9 @@ const NotFound: React.FC = () => {
     <PageWrapper>
       <div className={styles.wrapper}>
         <span>😕</span>
-        <p>This page has been deleted or never existed!</p>
+        <p>Эта страница была удалена или никогда не существовала!</p>
         <Link to="/">
-          <button>Go Back</button>
+          <button>На главную</button>
         </Link>
       </div>
     </PageWrapper>

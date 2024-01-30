@@ -11,6 +11,7 @@ export const CatsContext = createContext<CatsContextInterface | undefined>(undef
 
 export const CatProvider = ({ children }: CatProviderProps) => {
   const [data, setData] = useState<CatBreed[]>([]);
+  const [likedCats, setLikedCats] = useState<CatBreed[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -22,18 +23,30 @@ export const CatProvider = ({ children }: CatProviderProps) => {
             "x-api-key": process.env.REACT_APP_CAT_API_KEY
           }
         });
-        setData(response.data);
+        const initialData = response.data.map((cat) => ({...cat, isLiked: false}));
+
+        setData(initialData);
         setIsLoading(false);
       } catch (error) {
-        console.error("Error fetching cat data:", error);
+        throw new Error("Error fetching cat data");
       }
     };
-
     fetchData();
   }, []);
 
+  const toggleLike = (catId: string) => {
+    setData((prevCats) =>
+      prevCats.map((cat) =>
+        cat.id === catId ? { ...cat, isLiked: !cat.isLiked } : cat
+      )
+    );
+  };
+  useEffect(() => {
+    setLikedCats(data.filter((cat) => cat.isLiked));
+  }, [data]);
+
   return (
-    <CatsContext.Provider value={{data , isLoading }}>
+    <CatsContext.Provider value={{data , isLoading, likedCats, toggleLike }}>
       {children}
     </CatsContext.Provider>
   );

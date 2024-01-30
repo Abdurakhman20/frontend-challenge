@@ -5,16 +5,13 @@ export type CatImage = {
 
 export type CatBreed = {
   id: string;
-  name: string;
-  description: string;
-  temperament: string;
-  origin: string;
-  life_span: string;
-  wikipedia_url: string;
-  images: CatImage[];
+  image: CatImage;
+  isLiked: boolean;
 }
 
 export interface CatsContextInterface {
   data: CatBreed[];
+  likedCats: CatBreed[];
   isLoading: boolean;
+  toggleLike: (catId: string) => void;
 }
