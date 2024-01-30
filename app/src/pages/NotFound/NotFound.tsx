@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import PageWrapper from "../../components/PageWrapper/PageWrapper";
+
 import styles from "./NotFound.module.css";
 
 const NotFound: React.FC = () => {

@@ -1,7 +1,9 @@
 import React from "react";
-import styles from "./Header.module.css";
+
 import Navigation from "../Navigation/Navigation";
 import PageWrapper from "../PageWrapper/PageWrapper";
+
+import styles from "./Header.module.css";
 
 const Header: React.FC = () => {
   return (

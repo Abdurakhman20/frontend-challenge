@@ -1,3 +1,5 @@
+import React from "react";
+
 import PageWrapper from "../../components/PageWrapper/PageWrapper";
 
 const Favorites = () => {
