@@ -5,8 +5,10 @@ import { useCatContext } from "../../store/hooks";
 
 import PageWrapper from "../../components/PageWrapper/PageWrapper";
 import CatCardList from "../../components/CatCardList/CatCardList";
+import Button from "../../components/Button/Button";
 
 import styles from "./Favorites.module.css";
+
 
 const Favorites = () => {
   const { likedCats } = useCatContext();
@@ -19,7 +21,7 @@ const Favorites = () => {
           <span>😢</span>
           <p>У тебя еще нет любимых котиков. Ты что не любишь котиков?</p>
           <Link to="/">
-            <button>На главную</button>
+            <Button>На главную</Button>
           </Link>
         </div>
       )}

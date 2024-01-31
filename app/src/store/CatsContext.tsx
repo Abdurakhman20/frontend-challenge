@@ -34,6 +34,10 @@ export const CatProvider = ({ children }: CatProviderProps) => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    setLikedCats(data.filter((cat) => cat.isLiked));
+  }, [data]);
+
   const toggleLike = (catId: string) => {
     setData((prevCats) =>
       prevCats.map((cat) =>
@@ -41,10 +45,7 @@ export const CatProvider = ({ children }: CatProviderProps) => {
       )
     );
   };
-  useEffect(() => {
-    setLikedCats(data.filter((cat) => cat.isLiked));
-  }, [data]);
-
+  
   return (
     <CatsContext.Provider value={{data , isLoading, likedCats, toggleLike }}>
       {children}
