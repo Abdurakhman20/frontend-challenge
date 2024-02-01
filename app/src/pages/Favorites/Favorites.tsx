@@ -12,6 +12,7 @@ import styles from "./Favorites.module.css";
 
 const Favorites = () => {
   const { likedCats } = useCatContext();
+
   return (
     <PageWrapper>
       {likedCats.length ? (

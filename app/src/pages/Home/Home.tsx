@@ -9,6 +9,7 @@ import styles from "./Home.module.css";
 
 const Home = () => {
   const {data, isLoading} = useCatContext();
+
   if(isLoading) return (
     <PageWrapper>
       <div className={styles.wrapper}>
